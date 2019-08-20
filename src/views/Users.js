@@ -4,8 +4,13 @@ import styled from "styled-components";
 const Users = () => {
     return (
         <Container>
-            <h4>-Users Online-</h4>
-            <p>Shawn Antonucci</p>
+            <h4>Users Online (4)</h4>
+            <Wrapper>
+                <p>Shawn Antonucci</p>
+                <p>Crystal Antonucci</p>
+                <p>Rinoa Antonucci</p>
+                <p>Molly Antonucci</p>
+            </Wrapper>
         </Container>
     );
 };
@@ -32,5 +37,16 @@ const Container = styled.div`
         padding: 0;
         margin: 0;
         margin-top: 5px;
+    }
+`;
+
+const Wrapper = styled.div`
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+
+    p {
+        width: 49%;
     }
 `;
