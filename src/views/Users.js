@@ -1,23 +1,36 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 const Users = () => {
     return (
         <Container>
-            Users
+            <h4>-Users Online-</h4>
+            <p>Shawn Antonucci</p>
         </Container>
-    )
-}
+    );
+};
 
-export default Users
+export default Users;
 
 const Container = styled.div`
-    border: 1px solid red;
+    border: 1px solid black;
+    background: #ccc;
     display: flex;
-    position: absolute;
+    flex-direction: column;
     right: 0;
-    margin-right: 20px;
-    margin-top: 20px;
     width: 20%;
-    height: 200px;
+    margin-right: 4%;
+    height: auto;
+    position: fixed;
+    top: 20;
+
+    h4 {
+        margin: 0;
+    }
+    p {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+    }
 `;

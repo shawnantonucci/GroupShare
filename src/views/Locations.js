@@ -29,40 +29,39 @@ const Locations = () => {
     };
 
     return (
-        <div>
-            <h3>Locations</h3>
+        <LocationContainer>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Location:
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={event => setName(event.target.value)}
+                    />
+                </label>
+                <label>
+                    Image URL:
+                    <input
+                        type="text"
+                        value={imgUrl}
+                        onChange={event => setImgUrl(event.target.value)}
+                    />
+                </label>
+                <button type="submit">submit</button>
+            </form>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Location:
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={event => setName(event.target.value)}
-                        />
-                    </label>
-                    <label>
-                        Image URL:
-                        <input
-                            type="text"
-                            value={imgUrl}
-                            onChange={event => setImgUrl(event.target.value)}
-                        />
-                    </label>
-                    <button type="submit">submit</button>
-                </form>
+                <CardContainer>
+                    {location.map(place => {
+                        return (
+                            <Card>
+                                <h3>{place.name}</h3>
+                                <img src={place.imgUrl} alt="location" />
+                            </Card>
+                        );
+                    })}
+                </CardContainer>
             </div>
-            <CardContainer>
-                {location.map(place => {
-                    return (
-                        <Card>
-                            <h3>{place.name}</h3>
-                            <img src={place.imgUrl} alt="location" />
-                        </Card>
-                    );
-                })}
-            </CardContainer>
-        </div>
+        </LocationContainer>
     );
 };
 
@@ -72,6 +71,7 @@ const CardContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-self: center;
+    margin-top: 30px;
     width: 100%;
     height: auto;
     /* margin: 0 auto; */
@@ -79,7 +79,7 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
     border: 1px solid black;
-    margin: 10px;
+    margin: 20px;
     width: 300px;
     height: auto;
 
@@ -90,6 +90,16 @@ const Card = styled.div`
     img {
         width: 90%;
         height: 65%;
+    }
+`;
+
+const LocationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    form {
+        position: absolute;
+        margin-left: 3%;
     }
 `;
 
