@@ -12,6 +12,16 @@ const Locations = () => {
             name: "New York",
             imgUrl:
                 "https://thenypost.files.wordpress.com/2019/03/190309-nyc-bankrupt.jpg?quality=90&strip=all&w=618&h=410&crop=1"
+        },
+        {
+            name: "Dallas",
+            imgUrl:
+                "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2019/04/18/1532/Hyatt-Regency-Dallas-P173-Downton-on-River.jpg/Hyatt-Regency-Dallas-P173-Downton-on-River.16x9-V1.jpg?imwidth=1920"
+        },
+        {
+            name: "Albany",
+            imgUrl:
+                "https://livability.com/sites/default/files/AlbanyNY-DowntownDistrict.jpg"
         }
     ]);
 
