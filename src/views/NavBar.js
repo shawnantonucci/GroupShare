@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <div>
             <HeaderNav>
-                <p>Home</p>
-                <p>Locations</p>
-                <p>Profile</p>
-                <p>Log Out</p>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/locations">Locations</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/">Log Out</NavLink>
                 <h1>GroupShare</h1>
             </HeaderNav>
         </div>
@@ -30,21 +31,6 @@ const HeaderNav = styled.div`
     background: #ccc;
     height: 60px;
 
-    p {
-        margin-right: 25px;
-        margin-left: 3%;
-        align-self: center;
-        width: 5%;
-        white-space: nowrap;
-        font-size: 16px;
-        color: black;
-
-        :hover {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-
     h1 {
         align-self: center;
         font-size: 24px;
@@ -52,5 +38,21 @@ const HeaderNav = styled.div`
         right: 0;
         top: 0;
         margin-right: 10%;
+    }
+`;
+
+const NavLink = styled(Link)`
+    margin-right: 25px;
+    margin-left: 3%;
+    align-self: center;
+    width: 5%;
+    white-space: nowrap;
+    font-size: 16px;
+    color: black;
+    text-decoration-line: none;
+
+    :hover {
+        font-size: 18px;
+        font-weight: bold;
     }
 `;
